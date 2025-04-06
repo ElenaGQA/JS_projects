@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:darkgray;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ iframe {
+    width: 80%;
+    height: 500px;
+    margin-top: 20px;
+    border: none;
+} 
