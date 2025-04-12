@@ -49,11 +49,13 @@ function getNumber(min, max) {
 }
 
 function generateQuestion() {
+    userInput.focus();
     if (totalQuestions == askedQuestions) {
         gameOn = false;
         gameOverDiv.style.display = "block";
         gameElements.style.display = "none";
         setUpDiv.style.display = "none";
+        backgroundMusic.pause();
         if (score > wrongAnswers) {
             finalScore.innerHTML = `You won! Score is ${score}/${wrongAnswers}`
         }
@@ -115,7 +117,7 @@ function startTimer() {
 
 submitBtn.addEventListener('click', () => {
     let answer = +userInput.value;
-    if (answer == "") {
+    if (+userInput.value === "") {
         alert("Answer the question");
     }
     else if (answer === correctAnswer) {
