@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f4f8;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 100vh;
+    gap: 20px;
+}
+
+.topSection {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.creationSection {
+    background-color: cornflowerblue;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    
+}
+
+input {
+    width: 100%;
+    margin-top:5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+#addBtn {
+    background-color: lightskyblue;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#addBtn:active {
+    transform: translateY(2px);
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#videoPlayer {
+    width: 500px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 500px;
+}
+
+li {
+    padding: 10px;
+    background: #eee;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background: #ddd;
+}
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+}
