@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    margin: 5px 5px 10px 5px;
+    padding: 6px 12px;
+   
+    font-size: 15px;
+}
+
+thead th {
+    background-color: black;
+    color: white;
+}
+
+table,
+td,
+th {
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px 40px;
+}
+
+tfoot {
+    background-color: lightgray;
+}
