@@ -1,7 +1,7 @@
 const tableBody = document.querySelector("tbody");
 const sortButton = document.querySelector("#sortAverage");
 const addButton = document.querySelector("#addStudent");
-const tableRows = tableBody.querySelectorAll("tr");
+
 
 updateAllAverages()
 
@@ -74,9 +74,18 @@ addButton.addEventListener('click', () => {
     scienceCell.innerHTML = science
     historyCell.innerHTML = history
     calculateAvarage(row)
-
+    
 })
 
-sortButton.addEventListener('click', ()=>{
-    
+sortButton.addEventListener('click', () => {
+    let tableRows = tableBody.querySelectorAll("tr");
+    let tableRowsArr = Array.from(tableRows)
+    tableRowsArr.sort((a, b) => {
+        return +a.cells[4].innerHTML - +b.cells[4].innerHTML
+    })
+
+    tableBody.innerHTML = ""
+    tableRowsArr.forEach((el) => {
+        tableBody.appendChild(el)
+    })
 })
