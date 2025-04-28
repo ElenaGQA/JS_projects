@@ -32,13 +32,13 @@
                     <td>Anna Smith</td>
                     <td>88</td>
                     <td>92</td>
-                    <td>85</td>   
+                    <td>85</td>
                 </tr>
                 <tr>
-                    <td>Jane MIller</td>
+                    <td>Jane Miller</td>
                     <td>58</td>
                     <td>60</td>
-                    <td>55</td>  
+                    <td>55</td>
                 </tr>
                 <tr>
                     <td>John Doe</td>
@@ -46,7 +46,7 @@
                     <td>78</td>
                     <td>80</td>
                 </tr>
-              
+
             </tbody>
             <tfoot>
                 <tr>
@@ -54,6 +54,23 @@
                 </tr>
             </tfoot>
         </table>
+        <button id="printBtn">Print</button>
+    </div>
+    <div class="modal">
+        <div class="modalContent">
+            <h2>Add a new student</h2>
+            <label for="studentName">Student Name</label>
+            <input type="text" placeholder="Student Name" id="studentName"> <br>
+            <label for="mathGrade">Math grade</label>
+            <input type="number" placeholder="0" id="mathGrade"  min="0" max="100"> <br>
+            <label for="scienceGrade">Science grade</label>
+            <input type="number" placeholder="0" id="scienceGrade"  min="0" max="100"> <br>
+            <label for="historyGrade">History grade</label>
+            <input type="number" placeholder="0" id="historyGrade"  min="0" max="100"> <br>
+            <button id="saveBtn">Save</button>
+            <button id="cancelBtn">Cancel</button>
+
+        </div>
     </div>
 
 
