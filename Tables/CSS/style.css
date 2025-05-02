@@ -10,8 +10,9 @@ body {
     text-align: center;
     height: 100vh;
 }
+
 h1 {
-    font-size: 48px; /* or try 48px, 3em, etc. */
+    font-size: 48px;
 }
 
 caption {
@@ -25,17 +26,17 @@ button {
     margin: 5px 5px 10px 5px;
     padding: 9px 17px;
     font-size: 20px;
-    background-color: #28a745; 
+    background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 button:active {
-    transform: translateY(2px); 
-    background-color: #218838; 
+    transform: translateY(2px);
+    background-color: #218838;
 }
 
 
@@ -89,39 +90,40 @@ tfoot {
     animation: fadingContent 1s ease;
 }
 
-@keyframes fadingContent{
-    from{
+@keyframes fadingContent {
+    from {
         transform: scale(0.2);
     }
-    to{
+
+    to {
         transform: scale(1);
     }
 }
 
 .modalContent label,
 input {
-display: block;
-margin-top: 5px;
+    display: block;
+    margin-top: 5px;
 }
 
 input {
-margin: 10px auto;
-padding: 10px;
-border: 2px solid;
-border-radius: 10px;
-font-size: 18px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 input:focus {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
 }
 
-#cancelBtn{
-background-color: red;
+#cancelBtn {
+    background-color: red;
 }
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
