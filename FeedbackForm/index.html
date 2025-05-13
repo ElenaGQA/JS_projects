@@ -11,9 +11,9 @@
 <body>
     <div class="wrapper">
 
-        <h1>Leave your Feedback!</h1>
-
         <div class="container">
+
+            <h1>Leave your Feedback!</h1>
             <form id="form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" placeholder="Enter your name" />
@@ -22,7 +22,7 @@
                 <input type="email" id="email" placeholder="Enter your email" />
 
                 <label for="rating">Rating:</label>
-                <select id="rating" >
+                <select id="rating">
                     <option value="" disabled selected>Select rating</option>
                     <option value="excellent">Excellent</option>
                     <option value="good">Good</option>
@@ -35,6 +35,17 @@
 
                 <button id="submitBtn">Submit Feedback</button>
             </form>
+
+            <button id="feedbackBtn">view Feedbacks</button>
+            <div id="adminModal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModal" class="close">×</span>
+                    <h3>Enter Admin Password</h3>
+                    <input type="password" id="adminPassword" placeholder="Admin Password">
+                    <button id="submitPassword">Submit</button>
+                    <p id="passwordMessage"></p>
+                </div>
+            </div>
 
             <p id="message"></p>
 

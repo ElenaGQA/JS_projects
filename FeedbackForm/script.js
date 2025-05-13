@@ -4,13 +4,22 @@ const email = document.querySelector('#email');
 const rating = document.querySelector('#rating');
 const submitBtn = document.querySelector('#submitBtn');
 const message = document.querySelector('#message');
+const feedbackBtn = document.querySelector("#feedbackBtn");
+const adminModal = document.querySelector("#adminModal");
+const closeModal = document.querySelector("#closeModal");
+const submitPassword = document.querySelector("#submitPassword");
+const adminPasswordInput = document.querySelector("#adminPassword");
+const passwordMessage = document.querySelector("#passwordMessage");
+
+const ADMIN_PASSWORD = "admin123"
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();  // prevents default action of the form when submiting to clear the form and all data is lost
     let nameValue = name.value;
     let emailValue = email.value;
     let ratingValue = rating.value;
-    if (nameValue == "" || emailValue == "" || ratingValue == "") {
+    if (!nameValue || !emailValue || !ratingValue) {
         message.innerHTML = "Please, fill out all fields!";
         message.style.color = "red";
         message.style.textAlign = "center";
@@ -18,32 +27,41 @@ form.addEventListener('submit', (event) => {
 
 
     if (ratingValue == "excellent") {
-        message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered Excelent`;
         message.style.color = "darkgreen";
-        message.style.textAlign = "center";
-        form.reset();
     }
     else if (ratingValue == "good") {
-        message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered Good`;
         message.style.color = "blue";
-        message.style.textAlign = "center";
-        form.reset();
-
     }
     else if (ratingValue == "normal") {
-        message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered Normal`;
         message.style.color = "orange";
-        message.style.textAlign = "center";
-        form.reset();
-
     }
     else if (ratingValue == "poor") {
-        message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered Poor`;
         message.style.color = "red";
-        message.style.textAlign = "center";
-        form.reset();
-
     }
+    message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered ${ratingValue}`;
+    message.style.textAlign = "center";
+    form.reset();
 
 })
 
+feedbackBtn.addEventListener('click', () => {
+    adminModal.style.display = "block";
+    submitPassword.addEventListener('click', () => {
+        console.log(adminPasswordInput.value)
+        if (adminPasswordInput.value == "admin123") {
+            passwordMessage.innerHTML = "Success";
+            passwordMessage.style.color = "green";
+            setTimeout(() => window.location.href = "./reviews.html", 1000)
+        }
+        else {
+            passwordMessage.innerHTML = "Incorrect password";
+            passwordMessage.style.color = "red";
+            setTimeout(() => adminModal.style.display = "none", 1000)
+        }
+    })
+
+})
+
+closeModal.addEventListener('click', () => {
+    adminModal.style.display = "none";
+})

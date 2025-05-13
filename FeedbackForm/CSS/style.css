@@ -1,24 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body,
-html {
-    height: 100%;
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: lightgrey;
-}
-
-form {
-    background-color: cornflowerblue;
-    border: 1px;
-    border-radius: 10px;
-    padding: 20px 20px;
+    height: 100vh;
+    flex-direction: column;
 
 }
 
@@ -26,7 +16,13 @@ label,
 input,
 button {
     display: block;
+}
 
+#form {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px 30px;
+    background-color: cornflowerblue;
 }
 
 input,
@@ -45,21 +41,58 @@ label {
     margin-top: 5px;
 }
 
-#submitBtn {
+#submitBtn,
+#feedbackBtn,
+#submitPassword {
     padding: 10px 20px;
     background-color: darkblue;
-    margin: 0 auto;
+    margin: 5px auto;
     color: white;
     border: none;
     border-radius: 10px;
 
 }
 
-#submitBtn:hover {
+#submitBtn:hover,
+#feedbackBtn:hover,
+#submitPassword:hover {
     background-color: blue;
     cursor: pointer;
 }
 
-#submitBtn:active {
+#submitBtn:active,
+#feedbackBtn:active,
+#submitPassword:active {
     transform: translateY(2px);
+}
+
+#message {
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    /* z-index: 2;  */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+     /* overflow: auto;  */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
 }
