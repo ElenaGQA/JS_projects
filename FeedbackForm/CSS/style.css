@@ -96,3 +96,11 @@ label {
     font-size: 20px;
     cursor: pointer;
 }
+
+#reviewList{
+    list-style: none;
+}
+
+.reviewContainer{
+    padding: 10px;
+}

@@ -1,6 +1,7 @@
 const form = document.querySelector('#form');
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
+const comments = document.querySelector('#comments')
 const rating = document.querySelector('#rating');
 const submitBtn = document.querySelector('#submitBtn');
 const message = document.querySelector('#message');
@@ -19,12 +20,12 @@ form.addEventListener('submit', (event) => {
     let nameValue = name.value;
     let emailValue = email.value;
     let ratingValue = rating.value;
+    let commentsValue = comments.value;
     if (!nameValue || !emailValue || !ratingValue) {
         message.innerHTML = "Please, fill out all fields!";
         message.style.color = "red";
         message.style.textAlign = "center";
     }
-
 
     if (ratingValue == "excellent") {
         message.style.color = "darkgreen";
@@ -40,6 +41,12 @@ form.addEventListener('submit', (event) => {
     }
     message.innerHTML = `Thank you for your feedback, ${nameValue}! You answered ${ratingValue}`;
     message.style.textAlign = "center";
+    // localStorage.clear()
+    let feedback = JSON.parse((localStorage.getItem("feedbackArray"))) || []
+    feedback.push({ nameValue, emailValue, ratingValue, commentsValue })
+    // console.log( feedback)
+    localStorage.setItem("feedbackArray", JSON.stringify(feedback))
+
     form.reset();
 
 })
@@ -56,7 +63,12 @@ feedbackBtn.addEventListener('click', () => {
         else {
             passwordMessage.innerHTML = "Incorrect password";
             passwordMessage.style.color = "red";
-            setTimeout(() => adminModal.style.display = "none", 1000)
+            setTimeout(() => {
+                adminModal.style.display = "none"
+                adminPasswordInput.value = ""
+                passwordMessage.innerHTML = ""
+            }, 1000)
+
         }
     })
 
