@@ -44,7 +44,6 @@ form.addEventListener('submit', (event) => {
     // localStorage.clear()
     let feedback = JSON.parse((localStorage.getItem("feedbackArray"))) || []
     feedback.push({ nameValue, emailValue, ratingValue, commentsValue })
-    // console.log( feedback)
     localStorage.setItem("feedbackArray", JSON.stringify(feedback))
 
     form.reset();
